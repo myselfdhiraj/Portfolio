@@ -327,32 +327,32 @@
 /* =========================== About End ============================ */
 
 
-/* =========================== Services Start ============================ */
-.services, .project{
+/* =========================== Project Start ============================ */
+.project{
     width: 100%;
     height: auto;
     background-color: var(--primerybgcolor);
 }
-.services .main, .project .main{
+.project .main{
     width: 80%;
     height: auto;
     margin: 40px auto;
 }
-.services .main .heading,.project .main .heading{
+.project .main .heading{
     width: 100%;
     text-align: center;
 }
-.services .main .heading h1,.project .main .heading h1{
+.project .main .heading h1{
     font-size: 2.5rem;
     font-weight: 600;
 }
-.services .main .heading p,.project .main .heading p{
+.project .main .heading p{
     display: inline-block;
     font-size: 1rem;
     position: relative;
     padding: 5px 0;
 }
-.services .main .heading p::before,.project .main .heading p::before{
+.project .main .heading p::before{
     content: '';
     width: 100%;
     height: 3px;
@@ -361,15 +361,14 @@
     bottom: 0px;
     left: 0;
 }
-.services .box, .project .main .box{
+.project .main .box{
     margin: 5vh 0;
     display: flex;
     align-items: center;
     justify-content: space-evenly;
     padding-top: 30px;
 }
-.services .box .card, .project .main .box .card{
-    width: 28%;
+.project .main .box .card{
     text-align: center;
     background-color: var(--secounderycolor);
     box-shadow: 0px 0px 6px 3px rgba(133, 133, 133, 0.45),
@@ -377,39 +376,15 @@
         0px 25px 20px -20px rgba(133, 133, 133, 0.45),
         -25px 0px 20px -20px rgba(133, 133, 133, 0.45);
     padding: 20px;
-}
-.services .box .card .icon{
-    width: 85px;
-    height: 85px;
-    border-radius: 50%;
-    border: 5px solid var(--overleycolor);
-    margin: 10px auto;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-.services .box .card .icon i{
-   font-size: 3rem;
-   color: var(--primerycolor);
-}
-.services .box .card .text{
-    font-size: 0.95rem;
-    padding: 10px 0;
-}
-/* =========================== Services End ============================ */
-
-
-/* =========================== Project Start ============================ */
-.project .main .box .card{
-    /* border: 2px solid blue; */
     margin: 20px;
     width: 100%;
     padding: 0;
     text-align: left;
     position: relative;
 }
+
 .project .main .box .card .img{
-    width: 500px;
+    width: auto;
     height: 300px;
     overflow: hidden;
     margin: 0 0;
@@ -417,35 +392,37 @@
 .project .main .box .card .img img{
     width: 100%;
     height: 100%;
+    object-position: center;
     object-fit: cover;
 }
 .project .main .box .card h2{
     padding: 20px 0px 10px 20px;
     font-size: 1.6rem;
-    line-height: 0.7;
+    /* line-height: 0.7; */
 }
-.project .main .box .card .text{
-    padding-left: 20px;
-    padding-bottom: 10px;
-    font-size: 0.9rem;
+.project .main .links-area{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+   margin: 0 10px;
 }
-.project .main .box .card .text span{
-    padding-right: 5px;
+.project .main .links-area div{
+    margin: 0 20px 10px;
+    padding: 5px 20px ;
+    border-radius: 15px;
+    background-color: transparent;
+    border: 3px solid var(--overleycolor); 
+}
+.project .main .links-area div:hover{
+    background-color: var(--overleycolor);
+    border: transparent;
+}
+.project .main .links-area div a{
     color: var(--overleycolor);
+    text-decoration: none;
 }
-.project .main .box .card .icon{
-   position: absolute;
-   bottom: 10px;
-   right: 15px;
-   padding: 5px;
-}
-.project .main .box .card .icon i{
-   font-size: 2.4rem;
-   transition: all 0.5s ease-in-out;
-}
-.project .main .box .card .icon i:hover{
-   color: var(--overleycolor);
-   transform: rotate(45deg);
+.project .main .links-area div:hover a{
+    color: var(--primerybgcolor);
 }
 /* =========================== Project End ============================ */
 
@@ -582,16 +559,17 @@
     .about .main .left-box .intro{
         flex-direction: row;
     }
-    .services .box, .project .box{
+    .project .box{
         flex-direction: column;
     }
-    .services .box .card, .project .box .card{
+    .project .box .card{
         width: 80%;
         margin: 15px;
     }
     .contact .main .box{
         padding: 5vh 5vw;
         flex-direction: column;
+        text-align: center;
     }
     .contact .main .box .left{
         width: 100%;
@@ -643,6 +621,35 @@
     }
     .about .main .left-box .intro .info{
         width: 100%;
+    }
+
+}
+@media only screen and (max-width:380px) {
+    
+    .about .main .left-box .intro{
+        padding: 0;
+        flex-direction: column;
+        text-align: center;
+    }
+    .about .main .left-box .intro .img{
+        margin: 10px auto;
+    }
+    .about .main .left-box .intro .info{
+        width: 100%;
+    }
+
+}
+@media only screen and (max-width:440px) {
+    
+    .project .main .box .card .links-area{
+        width: 100%;
+        margin: 10px 0px;
+        flex-direction: column;
+    }
+    .project .main .box .card .links-area div{
+        width: 80%;
+        margin: 10px auto;
+        text-align: center;
     }
 
 }
